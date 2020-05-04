@@ -49,7 +49,7 @@ class LinkBySlug
                 return '';
         }
         //create link
-        return '<a href="'.get_permalink($targetPost->ID).'#'.$atts['anchor'].'" class="'.$atts['class'].'">'
+        return '<a href="'.esc_url(get_permalink($targetPost->ID).'#'.$atts['anchor']).'" class="'.$atts['class'].'">'
             .$targetPost->post_title
         .'</a>';
     }
