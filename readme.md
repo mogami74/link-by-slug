@@ -8,7 +8,7 @@ Put all files into `wp-content/plugin/link-by-slug`.
 
 ## usage
 ```
-[linkbyslug postid="" slug="" class=""]
+[linkbyslug postid="" slug="" class="" anchor=""]
 ```
 
 `postid` or `slug' is required. If both is given, `postid` will be used to pick a post.
