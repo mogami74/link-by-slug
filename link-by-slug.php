@@ -26,7 +26,7 @@
     along with this program; if not, write to the Free Software
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
-/* usage [linkbyslug postid='' slug='' class=''] */
+/* usage [linkbyslug postid='' slug='' class='' anchor=''] */
 class LinkBySlug
 {
     function __construct(){
@@ -37,6 +37,7 @@ class LinkBySlug
 //                'postid' => '',
 //                'slug' => '',
 //                'class' => '',
+//                'anchor' => '',
 //            ), $atts, 'linkbyslug' );
 
         //get post object
@@ -48,7 +49,8 @@ class LinkBySlug
                 return '';
         }
         //create link
-        return '<a href="'.get_permalink($targetPost->ID).'" class="'.$atts['class'].'">'.$targetPost->post_title
+        return '<a href="'.get_permalink($targetPost->ID).'#'.$atts['anchor'].'" class="'.$atts['class'].'">'
+            .$targetPost->post_title
         .'</a>';
     }
     function get_post_id_by_name( $post_name, $post_type = 'post' )
